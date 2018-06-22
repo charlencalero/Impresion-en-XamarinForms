@@ -36,13 +36,7 @@ WriteLiteral("<!DOCTYPE html>  \n<html");
 
 WriteLiteral(" lang=\"en\"");
 
-WriteLiteral(">  \n<head>\r\n    <meta");
-
-WriteLiteral(" name=\"viewport\"");
-
-WriteLiteral(" content=\"width=device-width, initial-scale=1.0\"");
-
-WriteLiteral(" />\r\n    <link");
+WriteLiteral(">  \n<head>\r\n    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
@@ -52,9 +46,9 @@ WriteLiteral(" />\r\n</head>\n    <body>\n        <table");
 
 WriteLiteral(" class=\"header\"");
 
-WriteLiteral(" width=\"300\"");
+WriteLiteral(" style=\" width:300px;\"");
 
-WriteLiteral(">\r\n        \r\n            <tr><td");
+WriteLiteral(">\r\n\r\n            <tr><td");
 
 WriteLiteral(" colspan=\"2\"");
 
@@ -79,11 +73,13 @@ WriteLiteral("><h3>FACTURA ELECTRONICA</h3></td></tr>\r\n            <tr><td");
 
 WriteLiteral(" colspan=\"2\"");
 
+WriteLiteral(" style=\"text-align:left\"");
+
 WriteLiteral(">Serie/Numero: ");
 
 
-#line 17 "TicketTemplate.cshtml"
-                                         Write(Model.IdOrden);
+#line 16 "TicketTemplate.cshtml"
+                                                                 Write(Model.IdOrden);
 
 
 #line default
@@ -92,19 +88,25 @@ WriteLiteral("</td></tr>\r\n            <tr><td");
 
 WriteLiteral(" colspan=\"2\"");
 
+WriteLiteral(" style=\"text-align:left\"");
+
 WriteLiteral(">Fecha: 2018-05-18</td></tr>\r\n            <tr><td");
 
 WriteLiteral(" colspan=\"2\"");
+
+WriteLiteral(" style=\"text-align:left\"");
 
 WriteLiteral(">Docu: 43679394</td></tr>\r\n            <tr><td");
 
 WriteLiteral(" colspan=\"2\"");
 
+WriteLiteral(" style=\"text-align:left\"");
+
 WriteLiteral(">Cliente: ");
 
 
-#line 20 "TicketTemplate.cshtml"
-                                    Write(Model.Cliente);
+#line 19 "TicketTemplate.cshtml"
+                                                            Write(Model.Cliente);
 
 
 #line default
@@ -113,6 +115,8 @@ WriteLiteral("</tdcolspan=\"2\"></tr>\r\n            <tr><td");
 
 WriteLiteral(" colspan=\"2\"");
 
+WriteLiteral(" style=\"text-align:left\"");
+
 WriteLiteral(">Direccion: Jr Hermilio Valdizan 123</td></tr>\r\n            <tr><td");
 
 WriteLiteral(" colspan=\"2\"");
@@ -120,6 +124,8 @@ WriteLiteral(" colspan=\"2\"");
 WriteLiteral("></td></tr>\r\n\r\n            <tr>\r\n                <td");
 
 WriteLiteral(" width=\"200\"");
+
+WriteLiteral(" style=\"text-align:left\"");
 
 WriteLiteral(">Producto</td>\r\n                <td");
 
@@ -130,37 +136,41 @@ WriteLiteral(" style=\"text-align:right\"");
 WriteLiteral(">Precio</td>\r\n            </tr>\r\n\r\n");
 
 
-#line 29 "TicketTemplate.cshtml"
+#line 28 "TicketTemplate.cshtml"
             
 
 #line default
 #line hidden
 
-#line 29 "TicketTemplate.cshtml"
+#line 28 "TicketTemplate.cshtml"
              foreach (var prod in Model.Productos)
             {
 
 
 #line default
 #line hidden
-WriteLiteral("                <tr>\r\n                    <td>");
+WriteLiteral("                <tr>\r\n                    <td");
+
+WriteLiteral(" style=\"text-align:left\"");
+
+WriteLiteral(">");
 
 
-#line 32 "TicketTemplate.cshtml"
-                   Write(prod.Nombre);
+#line 31 "TicketTemplate.cshtml"
+                                           Write(prod.Nombre);
 
 
 #line default
 #line hidden
 WriteLiteral("</td>\r\n                    <td");
 
-WriteLiteral(" class=\"precio\"");
+WriteLiteral(" style=\"text-align:right\"");
 
 WriteLiteral(">");
 
 
-#line 33 "TicketTemplate.cshtml"
-                                  Write(prod.Total);
+#line 32 "TicketTemplate.cshtml"
+                                            Write(prod.Total);
 
 
 #line default
@@ -168,7 +178,7 @@ WriteLiteral(">");
 WriteLiteral("</td>\r\n                </tr>\r\n");
 
 
-#line 35 "TicketTemplate.cshtml"
+#line 34 "TicketTemplate.cshtml"
             }
 
 
@@ -185,13 +195,93 @@ WriteLiteral(" class=\"precio total\"");
 WriteLiteral(">");
 
 
-#line 39 "TicketTemplate.cshtml"
+#line 38 "TicketTemplate.cshtml"
                                     Write(Model.Total);
 
 
 #line default
 #line hidden
-WriteLiteral("</td>\r\n            </tr>\r\n\r\n            <tr><td");
+WriteLiteral("</td>\r\n            </tr>\r\n\r\n\r\n\r\n            <tr>\r\n                <td");
+
+WriteLiteral(" style=\"text-align:left\"");
+
+WriteLiteral(">\r\n                    OP. GRAVADAS S/\r\n                </td>\r\n                <t" +
+"d");
+
+WriteLiteral(" style=\"text-align:right\"");
+
+WriteLiteral(">\r\n                    4.24\r\n                </td>\r\n            </tr>\r\n          " +
+"  <tr>\r\n                <td");
+
+WriteLiteral(" style=\"text-align:left\"");
+
+WriteLiteral(">\r\n                    OP. EXONERADAS S/\r\n                </td>\r\n                " +
+"<td");
+
+WriteLiteral(" style=\"text-align:right\"");
+
+WriteLiteral(">\r\n                    0.00\r\n                </td>\r\n            </tr>\r\n          " +
+"  <tr>\r\n                <td");
+
+WriteLiteral(" style=\"text-align:left\"");
+
+WriteLiteral(">\r\n                    OP. INAFECTAS S/\r\n                </td>\r\n                <" +
+"td");
+
+WriteLiteral(" style=\"text-align:right\"");
+
+WriteLiteral(">\r\n                    0.00\r\n                </td>\r\n            </tr>\r\n          " +
+"  <tr>\r\n                <td");
+
+WriteLiteral(" style=\"text-align:left\"");
+
+WriteLiteral(">\r\n                    OP. GRATUITA S/\r\n                </td>\r\n                <t" +
+"d");
+
+WriteLiteral(" style=\"text-align:right\"");
+
+WriteLiteral(">\r\n                    0.00\r\n                </td>\r\n            </tr>\r\n          " +
+"  <tr>\r\n                <td");
+
+WriteLiteral(" style=\"text-align:left\"");
+
+WriteLiteral(">\r\n                    I.S.C. S/\r\n                </td>\r\n                <td");
+
+WriteLiteral(" style=\"text-align:right\"");
+
+WriteLiteral(">\r\n                    0.00\r\n                </td>\r\n            </tr>\r\n          " +
+"  <tr>\r\n                <td");
+
+WriteLiteral(" style=\"text-align:left\"");
+
+WriteLiteral(">\r\n                    TOTAL DESCUENTO S/\r\n                </td>\r\n               " +
+" <td");
+
+WriteLiteral(" style=\"text-align:right\"");
+
+WriteLiteral(">\r\n                    0.00\r\n                </td>\r\n            </tr>\r\n          " +
+"  <tr>\r\n                <td");
+
+WriteLiteral(" style=\"text-align:left\"");
+
+WriteLiteral(">\r\n                    IGV 18% S/\r\n                </td>\r\n                <td");
+
+WriteLiteral(" style=\"text-align:right\"");
+
+WriteLiteral(">\r\n                    0.76\r\n                </td>\r\n            </tr>\r\n          " +
+"  <tr>\r\n                <td");
+
+WriteLiteral(" style=\"text-align:left\"");
+
+WriteLiteral(">      TOTAL S/   </td>\r\n                <td");
+
+WriteLiteral(" style=\"text-align:right\"");
+
+WriteLiteral(">   5.00</td>\r\n            </tr>\r\n            <tr><td");
+
+WriteLiteral(" colspan=\"2\"");
+
+WriteLiteral("></td></tr>\r\n            <tr><td");
 
 WriteLiteral(" colspan=\"2\"");
 
@@ -200,25 +290,13 @@ WriteLiteral("></td></tr>\r\n            <tr>\r\n                <td");
 WriteLiteral(" colspan=\"2\"");
 
 WriteLiteral(">\r\n                    Valor Resumen : asfksdkhjgfdg76asd990/=\r\n                <" +
-"/td>\r\n            </tr>\r\n\r\n            <tr>\r\n                <td>\r\n             " +
-"       OP. GRAVADAS S/\r\n                </td>\r\n                <td>\r\n           " +
-"         4.24\r\n                </td>\r\n            </tr>\r\n            <tr>\r\n     " +
-"           <td>\r\n                    OP. EXONERADAS S/\r\n                </td>\r\n " +
-"               <td>\r\n                    0.00\r\n                </td>\r\n          " +
-"  </tr>\r\n            <tr>\r\n                <td>\r\n                    OP. INAFECT" +
-"AS S/\r\n                </td>\r\n                <td>\r\n                    0.00\r\n  " +
-"              </td>\r\n            </tr>\r\n            <tr>\r\n                <td>\r\n" +
-"                    OP. GRATUITA S/\r\n                </td>\r\n                <td>" +
-"\r\n                    0.00\r\n                </td>\r\n            </tr>\r\n          " +
-"  <tr>\r\n                <td>\r\n                    I.S.C. S/\r\n                </t" +
-"d>\r\n                <td>\r\n                    0.00\r\n                </td>\r\n     " +
-"       </tr>\r\n            <tr>\r\n                <td>\r\n                    TOTAL " +
-"DESCUENTO S/\r\n                </td>\r\n                <td>\r\n                    0" +
-".00\r\n                </td>\r\n            </tr>\r\n            <tr>\r\n               " +
-" <td>\r\n                    IGV 18% S/\r\n                </td>\r\n                <t" +
-"d>\r\n                    0.76\r\n                </td>\r\n            </tr>\r\n        " +
-"    <tr><td>      TOTAL S/   </td><td>   5.00</td></tr>\r\n\r\n\r\n        </table>\n  " +
-"  \n\t\n    </body>\n</html>  ");
+"/td>\r\n            </tr>\r\n            <tr>\r\n                <td");
+
+WriteLiteral(" colspan=\"2\"");
+
+WriteLiteral(">\r\n                    Puede visualizar su comprobante en: goo.fg/23fg\r\n         " +
+"       </td>\r\n            </tr>\r\n\r\n        </table>\n    \n\t\n    </body>\n</html>  " +
+"");
 
 }
 }

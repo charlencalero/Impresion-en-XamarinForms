@@ -37,10 +37,15 @@ namespace FormsPrinting.Droid.Services
                 // Only valid for API 19+
                 var version = Android.OS.Build.VERSION.SdkInt;
 
-                if (version >= Android.OS.BuildVersionCodes.Kitkat)
+  var printMgr = (PrintManager)Forms.Context.GetSystemService(Context.PrintService);
+
+                if (version >= Android.OS.BuildVersionCodes.Lollipop)
                 {
-                    var printMgr = (PrintManager)Forms.Context.GetSystemService(Context.PrintService);
-                    printMgr.Print("Forms-EZ-Print", droidViewToPrint.CreatePrintDocumentAdapter("ksoft"), null);
+                    printMgr.Print("Forms-EZ-Print", droidViewToPrint.CreatePrintDocumentAdapter("Forms-EZ-Print"), null);
+                }
+                else
+         {
+                    printMgr.Print("Forms-EZ-Print2", droidViewToPrint.CreatePrintDocumentAdapter(), null);
                 }
             }
         }
