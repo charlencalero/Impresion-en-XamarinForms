@@ -1,0 +1,41 @@
+﻿@model Orden
+
+<!DOCTYPE html>  
+<html lang="en">  
+    <head>
+		<link rel="stylesheet" href="ticket.css" />
+    </head>
+    <body>
+		<table class="header">
+			<tr>
+				<td>
+					<h1>Ticket: @Model.IdOrden</h1>
+					<h3>Cliente: @Model.Cliente</h3>
+				</td>
+				<td><img src="logo.png" width="100px"></td>
+			</tr>
+		</table>
+    	<br />
+		<table>
+			<thead>
+				<tr>
+					<td>Producto</td>
+					<td>Precio</td>
+				</tr>
+			</thead>
+			@foreach(var prod in Model.Productos)
+			{
+				<tr>
+					<td>@prod.Nombre</td>
+					<td class="precio">@prod.Total</td>
+				</tr>
+			}
+			<tfoot>
+				<tr>
+					<td class="total">Total</td>
+					<td class="precio total">@Model.Total</td>
+				</tr>
+			</tfoot>
+		</table>
+    </body>
+</html>  
