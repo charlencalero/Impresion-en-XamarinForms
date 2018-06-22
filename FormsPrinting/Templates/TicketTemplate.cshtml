@@ -2,41 +2,111 @@
 
 <!DOCTYPE html>  
 <html lang="en">  
-    <head>
-		<link rel="stylesheet" href="ticket.css" />
-    </head>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="ticket.css" />
+</head>
     <body>
-		<table class="header">
-		<tr><td><h1>Factura Electronica</h1></td></tr>
+        <table class="header" width="300">
+        
+            <tr><td colspan="2"><h3>INGENIERIA E INFORMATICA KING SOFTWARE SAC</h3></td></tr>
+            <tr><td colspan="2">A.H BELLA DURMIENTE MZB LT 19</td></tr>
+            <tr><td colspan="2">RUC: 2542471256</td></tr>
+            <tr><td colspan="2"></td></tr>
+            <tr><td colspan="2"><h3>FACTURA ELECTRONICA</h3></td></tr>
+            <tr><td colspan="2">Serie/Numero: @Model.IdOrden</td></tr>
+            <tr><td colspan="2">Fecha: 2018-05-18</td></tr>
+            <tr><td colspan="2">Docu: 43679394</td></tr>
+            <tr><td colspan="2">Cliente: @Model.Cliente</tdcolspan="2"></tr>
+            <tr><td colspan="2">Direccion: Jr Hermilio Valdizan 123</td></tr>
+            <tr><td colspan="2"></td></tr>
+
             <tr>
-				<td>
-					<h1>Ticket: @Model.IdOrden</h1>
-					<h3>Cliente: @Model.Cliente</h3>
-				</td>
-				<td><img src="logo.png" width="100px"></td>
-			</tr>
-		</table>
-    	<br />
-		<table>
-			<thead>
-				<tr>
-					<td>Producto</td>
-					<td>Precio</td>
-				</tr>
-			</thead>
-			@foreach(var prod in Model.Productos)
-			{
-				<tr>
-					<td>@prod.Nombre</td>
-					<td class="precio">@prod.Total</td>
-				</tr>
-			}
-			<tfoot>
-				<tr>
-					<td class="total">Total</td>
-					<td class="precio total">@Model.Total</td>
-				</tr>
-			</tfoot>
-		</table>
+                <td width="200">Producto</td>
+                <td width="100" style="text-align:right">Precio</td>
+            </tr>
+
+            @foreach (var prod in Model.Productos)
+            {
+                <tr>
+                    <td>@prod.Nombre</td>
+                    <td class="precio">@prod.Total</td>
+                </tr>
+            }
+
+            <tr>
+                <td class="total">Total</td>
+                <td class="precio total">@Model.Total</td>
+            </tr>
+
+            <tr><td colspan="2"></td></tr>
+            <tr>
+                <td colspan="2">
+                    Valor Resumen : asfksdkhjgfdg76asd990/=
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    OP. GRAVADAS S/
+                </td>
+                <td>
+                    4.24
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    OP. EXONERADAS S/
+                </td>
+                <td>
+                    0.00
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    OP. INAFECTAS S/
+                </td>
+                <td>
+                    0.00
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    OP. GRATUITA S/
+                </td>
+                <td>
+                    0.00
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    I.S.C. S/
+                </td>
+                <td>
+                    0.00
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    TOTAL DESCUENTO S/
+                </td>
+                <td>
+                    0.00
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    IGV 18% S/
+                </td>
+                <td>
+                    0.76
+                </td>
+            </tr>
+            <tr><td>      TOTAL S/   </td><td>   5.00</td></tr>
+
+
+        </table>
+    
+	
     </body>
 </html>  

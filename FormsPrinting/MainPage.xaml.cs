@@ -45,6 +45,7 @@ namespace FormsPrinting
             // Create and populate the Xamarin.Forms.WebView
             var browser = new WebView();
             browser.Source = htmlSource;
+            browser.WidthRequest = 300;
 
             var printService = DependencyService.Get<IPrinter>();
             var printServiceUWP = DependencyService.Get<IPrinterUWP>();
@@ -77,10 +78,10 @@ namespace FormsPrinting
 
         void AddProduct(object sender, EventArgs e)
         {
-            var price = (_random.NextDouble() + 0.1) * 150;
+            var price =Math.Round( (_random.NextDouble() + 2) * 7,2);
             var product = new Producto
             {
-                Nombre = "Producto " + price,
+                Nombre = "item " + price,
                 Total = price
             };
 
